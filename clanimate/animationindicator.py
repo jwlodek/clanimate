@@ -5,24 +5,21 @@ a spinning wheel animation.
 @author: Jakub Wlodek
 """
 
-from clanimate import progressindicator
+from clanimate import indicator
 import time
 
-class WheelIndicator(progressindicator.Indicator):
+class AnimationIndicator(indicator.Indicator):
 
     def __init__(self, name='', color='None', sleep_time=0.1, animation_frames='|/-//'):
         super().__init__(name=name, color=color)
         self.sleep_time = sleep_time
         self.animation_frames = animation_frames
-
+        self.frame_counter = 0
 
     def animate(self):
-        self.is_running = True
-        counter = 0
-        while self.is_running:
-            time.sleep(self.sleep_time)
-            self.write(self.animation_frames[counter])
-            counter = counter + 1
-            if counter == len(self.animation_frames):
-                counter = 0
+        time.sleep(self.sleep_time)
+        self.write(self.animation_frames[self.frame_counter])
+        self.frame_counter = self.frame_counter + 1
+        if self.frame_counter == len(self.animation_frames):
+            self.frame_counter = 0
 

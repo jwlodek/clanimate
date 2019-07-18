@@ -1,6 +1,6 @@
 
 
-class ProgressBar(Indicator):
+class BarIndicator(Indicator):
 
 
     def __init__(self, name='', color='None', todo_char='-', done_char='#', showcounter=False):

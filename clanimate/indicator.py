@@ -16,20 +16,28 @@ class Indicator:
     def __init__(self, name='', color='None'):
         self.name = name
         self.color = color
-        self.animation_thread = threading.Thread(target=self.animate, name='Animation Thread')
+        self.animation_thread = threading.Thread(target=self.start, name='Animation Thread')
         self.is_running = False
         self.item_counter = 0
+
+
+    def start(self):
+        """
+        Base function that starts the animate function. The animate function will be called until the 
+        animation is killed.
+        """
+
+        self.is_running = True
+        while self.is_running:
+            self.animate()
 
 
     def animate(self):
         """
         A base class that must be implemented in each child class, with the actual animation.
-
         """
 
-        self.is_running = True
-        while self.is_running:
-            pass
+        pass
 
 
     def stop(self):
