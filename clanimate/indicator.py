@@ -49,6 +49,7 @@ class Indicator:
         self.is_running = False
         self.animation_thread.join()
         self.animation_thread = threading.Thread(target=self.animate, name='Animation Thread')
+        sys.stdout.write('\n')
 
 
     def write(self, new_indicator_state):

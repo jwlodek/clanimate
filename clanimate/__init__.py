@@ -3,8 +3,9 @@ import sys
 from clanimate import indicator
 from clanimate import wheelindicator
 from clanimate import barindicator
+from clanimate import scrolltextindicator
 
-supported_indicators = ['wheel', 'progress_bar']
+supported_indicators = ['wheel', 'progress_bar', 'scroll_text']
 
 class ClanimateError(Exception):
     pass
@@ -20,6 +21,8 @@ class Animator:
             self.indicator = wheelindicator.WheelIndicator(num_elems, name=name, color=color, sleep_time=sleep_time, animation_frames=animation_frames)
         elif indicator_type == 'progress_bar':
             self.indicator = barindicator.BarIndicator(num_elems, name=name, color = color, todo_char=todo_char, done_char=done_char, showcounter=True)
+        elif indicator_type == 'scroll_text':
+            self.indicator = scrolltextindicator.ScrollTextIndicator(num_elems, name=name, color=color, sleep_time=sleep_time, animation_frames=animation_frames)
 
         elif indicator_type not in supported_indicators:
             raise ClanimateError('Selected animated indicator type is not supported')
