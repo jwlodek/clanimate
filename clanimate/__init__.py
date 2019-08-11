@@ -4,7 +4,7 @@ from clanimate import indicator
 from clanimate import wheelindicator
 from clanimate import barindicator
 
-supported_indicators = ['wheel']
+supported_indicators = ['wheel', 'progress_bar']
 
 class ClanimateError(Exception):
     pass
@@ -13,6 +13,8 @@ class Animator:
 
     def __init__(self, indicator_type, num_elems, name='', color='None', num_items=10, todo_char='-', done_char='#', showcounter=True, animation_frames='|/-\\', sleep_time=0.1):
         self.indicator = None
+
+        signal.signal(signal.SIGINT, self.sigint_handler)
 
         if indicator_type == 'wheel':
             self.indicator = wheelindicator.WheelIndicator(num_elems, name=name, color=color, sleep_time=sleep_time, animation_frames=animation_frames)
@@ -49,7 +51,5 @@ class Animator:
     def increment(self):
         if self.indicator.num_elems is not None:
             self.indicator.increment_counter()
-            if self.indicator.item_counter == self.indicator.num_elems:
-                self.end_animation()
         else:
             raise ClanimateError('Current animation does not support incrementing item counter')

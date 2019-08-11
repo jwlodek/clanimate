@@ -23,4 +23,6 @@ class BarIndicator(indicator.Indicator):
             loading_bar = loading_bar + self.done_char
         for j in range(self.item_counter, self.num_elems):
             loading_bar = loading_bar + self.todo_char
+        if self.showcounter:
+            loading_bar = loading_bar + '({}/{})'.format(self.item_counter, self.num_elems)
         self.write(loading_bar)

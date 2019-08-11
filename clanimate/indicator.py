@@ -18,7 +18,7 @@ class Indicator:
         self.color = color
         self.animation_thread = threading.Thread(target=self.start, name='Animation Thread')
         self.is_running = False
-        self.item_counter = 0
+        self.item_counter = 1
         self.num_elems = num_elems
 
 
