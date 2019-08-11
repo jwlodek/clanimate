@@ -8,10 +8,10 @@ a spinning wheel animation.
 from clanimate import indicator
 import time
 
-class AnimationIndicator(indicator.Indicator):
+class WheelIndicator(indicator.Indicator):
 
-    def __init__(self, name='', color='None', sleep_time=0.1, animation_frames='|/-//'):
-        super().__init__(name=name, color=color)
+    def __init__(self, num_elems, name='', color='None', sleep_time=0.1, animation_frames='|/-//'):
+        super().__init__(num_elems, name=name, color=color)
         self.sleep_time = sleep_time
         self.animation_frames = animation_frames
         self.frame_counter = 0

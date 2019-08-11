@@ -13,12 +13,13 @@ import datetime
 
 class Indicator:
 
-    def __init__(self, name='', color='None'):
+    def __init__(self, num_elems, name='', color='None'):
         self.name = name
         self.color = color
         self.animation_thread = threading.Thread(target=self.start, name='Animation Thread')
         self.is_running = False
         self.item_counter = 0
+        self.num_elems = num_elems
 
 
     def start(self):
