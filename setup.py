@@ -14,5 +14,17 @@ setuptools.setup(
     license='BSD (3-clause)',
     packages=['clanimate'],
     url='https://github.com/jwlodek/clanimate',
-    python_requires='>=3.2'
+    classifiers=[
+        'Development Status :: 3 - Alpha',
+        'Intended Audience :: Developers',
+        
+        'Programming Language :: Python :: 3.2',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',        
+        'Programming Language :: Python :: 3.7',
+    ],
+    keywords='animation cli commandline progressbar',
+    python_requires='>=3.2',
 )
