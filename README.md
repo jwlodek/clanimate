@@ -16,6 +16,7 @@ The basic usage of clanimate uses the `Animator` object. Then, simply call `star
 
 ```
 import clanimate
+import time
 
 animator = clanimate.Animator('wheel', 10, name='Loading')
 animator.start_animation()
