@@ -4,3 +4,5 @@ build/
 *~
 *#
 tester.py
+venv/
+.vscode/
