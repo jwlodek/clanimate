@@ -1,6 +1,6 @@
 # clanimate
 
-A python library for adding CLI loading bars and animations to your python scripts.
+A dead simple python library for adding CLI loading bars and animations to your python scripts.
 
 ### Installation
 
@@ -23,4 +23,12 @@ animator.start_animation()
 time.sleep(3)
 animator.end_animation()
 ```
+
 would be the most basic use case. The supported animator types are the `wheel` indicator, which shows a spinning character, the `bar` indicator which shows a progress bar, and the `scroll_text` indicator, which iterates through a string in a loop.
+
+
+### Running Examples
+
+If you'd like to see the different animation options in action, first install `clanimate`, then clone this repository,
+enter the [examples](https://github.com/jwlodek/clanimate/tree/master/examples) section, and run an example. 
+
